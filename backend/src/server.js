@@ -18,3 +18,5 @@ app.use(routes);
 server.listen(3000,()=>{
     console.log("backend em funcionamento");
 });
+
+module.exports = app;
