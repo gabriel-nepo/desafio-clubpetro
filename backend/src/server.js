@@ -16,5 +16,5 @@ app.use(routes);
 
 
 server.listen(3000,()=>{
-    console.log("backeasdand em funcionamento");
+    console.log("backend em funcionamento");
 });
