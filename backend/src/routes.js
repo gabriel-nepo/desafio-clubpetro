@@ -2,9 +2,13 @@ const express = require('express');
 const routes = express.Router();
 const fetch = require("node-fetch");
 
-routes.get('/api/users?since=:number', (req,res)=>{
+routes.get('/api/users', async (req,res)=>{
+    let resp = await fetch(`https://api.github.com/users?since=${req.query.since}`).then((response)=>response.json());
+    return res.json({
+        data: resp,
+        nextPage: `https://api.github.com/users?since=${resp[resp.length-1].id}`
+    });
 
-    res.send({status:'deu certo'});
 });
 routes.get('/api/users/:username/details', async (req,res)=>{
     console.log(req.params);
