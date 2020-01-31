@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './../App.css';
 import ReactTable from 'react-table';
 import { Button } from 'react-bootstrap';
+import baseUrl from './baseUrl'
+
 
 import "react-table/react-table.css";
 
@@ -22,7 +24,7 @@ export default class Repositories extends Component {
     }
 
     async handleSearch() {
-        let res = await fetch(`http://localhost:8000/api/users/${this.state.user}/repos`).then((response) => {
+        let res = await fetch(`${baseUrl}api/users/${this.state.user}/repos`).then((response) => {
             return response.json();
         });
         if(res.message !=='Not Found'){
@@ -44,10 +46,10 @@ export default class Repositories extends Component {
     render() {
         return (
             <div>
-                <h1 className="center page-header">User Details</h1>
+                <h1 className="center page-header">User Repositories</h1>
                 <div className="rt-margin">
                     <div className="mb-3 input-group">
-                        <input value={this.state.user} id="user" name="user" placeholder="Search for an username" aria-label="Search for an username" aria-describedby="basic-addon2" className="form-control" onChange={this.changeField.bind(this, 'user')} />
+                        <input value={this.state.user} id="user" name="user" placeholder="Search for a username to get his public repositories" aria-label="Search for a username to get his public repositories" aria-describedby="basic-addon2" className="form-control" onChange={this.changeField.bind(this, 'user')} />
                         <div className="input-group-append">
                             <Button className="btn-color next" block onClick={this.handleSearch.bind(this)}>
                                 Search
@@ -74,7 +76,7 @@ export default class Repositories extends Component {
                             {
                                 Header: "URL",
                                 accessor: "url",
-                            Cell: row => <div style={{ textAlign: "center" }}>{<a href={row.value}>{row.value}</a>}</div>
+                            Cell: row => <div style={{ textAlign: "center" }}>{<a href={row.value} target="_blank" rel="noopener noreferrer">{row.value}</a>}</div>
                             }
                         ]}
                         className="-striped -highlight"

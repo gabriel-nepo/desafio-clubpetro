@@ -4,12 +4,14 @@ import { Button } from 'react-bootstrap';
 import './../App.css';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
+import baseUrl from './baseUrl'
+
 
 export default class UsersTable extends Component {
   constructor() {
     super();
     this.state = {
-      current: 'http://localhost:8000/api/users',
+      current: `${baseUrl}api/users`,
       next: '',
       allUsers: []
     }

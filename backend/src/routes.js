@@ -6,7 +6,7 @@ routes.get('/api/users', async (req,res)=>{
     let resp = await fetch(`https://api.github.com/users?since=${req.query.since}`).then((response)=>response.json());
     return res.json({
         data: resp,
-        nextPage: `http://localhost:8000/api/users?since=${resp[resp.length-1].id}`
+        nextPage: `${process.env.APP_URL}api/users?since=${resp[resp.length-1].id}`
     });
 
 });
