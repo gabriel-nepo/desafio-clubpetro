@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "nodemon": "nodemon src/server.js --ignore __tests__",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "author": "",
   "license": "ISC",

@@ -15,11 +15,9 @@ export default class UsersTable extends Component {
     }
   }
   async handleNext() {
-    console.log(this.state.next)
     let res = await fetch(this.state.next).then((response) => {
       return response.json();
     });
-    await console.log(res);
     this.setState({
       allUsers: res.data,
       next: res.nextPage
@@ -38,7 +36,7 @@ export default class UsersTable extends Component {
   render() {
     return (
       <div>
-        <h1 className="center">GitHub Users</h1>
+        <h1 className="center page-header">GitHub Users</h1>
         <div className="rt-margin">
           <ReactTable
             showPageSizeOptions={false}

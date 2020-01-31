@@ -16,7 +16,6 @@ export default class Repositories extends Component {
         };
     }
     changeField(fieldName, event) {
-        console.log(event.target.value);
         var field = {};
         field[fieldName] = event.target.value;
         this.setState(field);
@@ -40,13 +39,12 @@ export default class Repositories extends Component {
         this.setState({
             message: 'Not Found'
         })
-        console.log(this.state.data);
     }
 
     render() {
         return (
             <div>
-                <h1 className="center">User Details</h1>
+                <h1 className="center page-header">User Details</h1>
                 <div className="rt-margin">
                     <div className="mb-3 input-group">
                         <input value={this.state.user} id="user" name="user" placeholder="Search for an username" aria-label="Search for an username" aria-describedby="basic-addon2" className="form-control" onChange={this.changeField.bind(this, 'user')} />

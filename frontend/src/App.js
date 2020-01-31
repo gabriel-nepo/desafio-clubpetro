@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './octocat2.png'
+import logo from './octocat.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import './App.css';
@@ -28,7 +28,6 @@ export default class App extends Component {
   
   handleComponent(){
     if(this.state.active === 'home'){
-      console.log('hello');
       return <UsersTable/>;
     }
     else if(this.state.active === 'details'){
@@ -40,8 +39,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
         <Navbar bg="dark" variant="dark">

@@ -18,6 +18,10 @@
   }
 }
 
+.page-header{
+  margin-top: 5% !important;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
