@@ -3,10 +3,11 @@ const routes = express.Router();
 const fetch = require("node-fetch");
 
 routes.get('/api/users', async (req,res)=>{
+    console.log(req.query);
     let resp = await fetch(`https://api.github.com/users?since=${req.query.since}`).then((response)=>response.json());
-    return res.json({
+    return res.send({
         data: resp,
-        nextPage: `https://api.github.com/users?since=${resp[resp.length-1].id}`
+        nextPage: `http://localhost:8000/api/users?since=${resp[resp.length-1].id}`
     });
 
 });

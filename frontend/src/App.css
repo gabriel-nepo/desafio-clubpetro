@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.center{
+  text-align: center;
+  
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +31,19 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.next{
+  margin-bottom: 5%;
+}
+
+.rt-margin{
+  margin: 5% 5% 0% 5% !important
+}
+
+.btn-color{
+  background-color:#343a40 !important;
+  border-radius: 0px !important;
 }
 
 @keyframes App-logo-spin {
