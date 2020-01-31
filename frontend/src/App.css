@@ -18,6 +18,10 @@
   }
 }
 
+.margin-bottom{
+  margin-bottom: 5%;
+}
+
 .homepage{
   display: block;
   margin-left: auto;
@@ -26,6 +30,10 @@
 
 .page-header{
   margin-top: 5% !important;
+}
+
+.sub-header{
+  margin-top: 2% !important;
 }
 
 .App-header {
