@@ -4,9 +4,10 @@ const fetch = require("node-fetch");
 
 routes.get('/api/users', async (req,res)=>{
     let resp = await fetch(`https://api.github.com/users?since=${req.query.since}`).then((response)=>response.json());
+    let port = process.env.APP_URL || 'http://localhost:8000/';
     return res.json({
         data: resp,
-        nextPage: `${process.env.APP_URL}api/users?since=${resp[resp.length-1].id}`
+        nextPage: `${port}api/users?since=${resp[resp.length-1].id}`
     });
 
 });
